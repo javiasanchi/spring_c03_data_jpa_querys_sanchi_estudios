@@ -3,6 +3,8 @@ package com.example.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "productos")
@@ -16,8 +18,8 @@ public class Productos {
     private Integer stock;
     private Boolean dispo;
     private LocalDate caducidad;
-    @ManyToOne
-    private Tienda tienda;
+    @ManyToMany
+    private List<Tienda> tienda = new ArrayList<>();
 
     public Productos() {
     }
@@ -91,6 +93,15 @@ public class Productos {
 
     public Productos setCaducidad(LocalDate caducidad) {
         this.caducidad = caducidad;
+        return this;
+    }
+
+    public List<Tienda> getTienda() {
+        return tienda;
+    }
+
+    public Productos setTienda(List<Tienda> tienda) {
+        this.tienda = tienda;
         return this;
     }
 
