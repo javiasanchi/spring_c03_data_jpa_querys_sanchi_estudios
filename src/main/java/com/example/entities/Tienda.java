@@ -16,6 +16,8 @@ public class Tienda {
     private String email;
     private Double factura;
     private Boolean abierta;
+    @OneToOne
+    private Direccion direccion;
 
     public Tienda() {
     }

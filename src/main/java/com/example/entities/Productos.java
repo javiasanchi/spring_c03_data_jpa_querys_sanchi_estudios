@@ -16,6 +16,8 @@ public class Productos {
     private Integer stock;
     private Boolean dispo;
     private LocalDate caducidad;
+    @ManyToOne
+    private Tienda tienda;
 
     public Productos() {
     }

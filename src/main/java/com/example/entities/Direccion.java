@@ -13,6 +13,8 @@ public class Direccion {
     private String localidad;
     private String ciudad;
     private String pais;
+    @OneToOne
+    private Tienda tienda;
     @Column(length = 5)
     private Integer cp;
 
