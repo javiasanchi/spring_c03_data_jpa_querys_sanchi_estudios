@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringC03DataJpaQuerysSanchiEstudiosApplication {
+public class App {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringC03DataJpaQuerysSanchiEstudiosApplication.class, args);
+		SpringApplication.run(App.class, args);
 	}
 
 }
