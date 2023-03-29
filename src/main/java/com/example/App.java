@@ -28,10 +28,20 @@ public class App {
 		findAllByCif();
 		findAllByTelefono();
 		findAllByEmail();
+		filtroPorCalleYPais();
+
 	}
 
+	private static void filtroPorCalleYPais() {
+		DireccionRepository direccionRepo = context.getBean(DireccionRepository.class);
+		System.out.println("==================== FIND ALL BY CALLE Y PAIS ====================");
+		List<Direccion> direccionFiltro = direccionRepo.findAllByCalleAndPais("calle2", "pais3");
+		for (Direccion direccion: direccionFiltro) {
+			System.out.println(direccion);
+		}
 
-		private static void findAll() {
+	}
+	private static void findAll() {
 
 			TiendaRepository tiendaRepository = context.getBean(TiendaRepository.class);
 			System.out.println("==================== FIND ALL ====================");
@@ -45,7 +55,6 @@ public class App {
 			}
 
 		}
-
 		public static void findAllByNombre() {
 			TiendaRepository tiendaRepository = context.getBean(TiendaRepository.class);
 			System.out.println("==================== FIND ALL BY NOMBRE ====================");
@@ -77,6 +86,7 @@ public class App {
 			System.out.println("La tienda por email es :" + tiendas4);
 
 		}
+
 	public static  void datosDemo() {
 
 		TiendaRepository tiendaRepository = context.getBean(TiendaRepository.class);
@@ -94,7 +104,7 @@ public class App {
 		Direccion dir3 = new Direccion("calle3", 6, "local3", "ciudad3", "pais3", 20400);
 
 		Tienda tien4 = new Tienda("Panadería", "73529407", 636195753, "javi@javi.es", 489.98, true);
-		Direccion dir4 = new Direccion("calle3", 6, "local3", "ciudad3", "pais3", 50400);
+		Direccion dir4 = new Direccion("calle2", 6, "local3", "ciudad3", "pais3", 50400);
 
 		tien1.setDireccion(dir1);
 		tien2.setDireccion(dir2);

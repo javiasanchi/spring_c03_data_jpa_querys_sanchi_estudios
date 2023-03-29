@@ -1,5 +1,6 @@
 package com.example.repositories;
 
+import com.example.entities.Direccion;
 import com.example.entities.Tienda;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -16,4 +17,5 @@ public interface TiendaRepository extends JpaRepository<Tienda, Long> {
     List<Tienda> findAllByTelefono(Integer telefono);
 
     List<Tienda> findAllByEmail(String mail);
+
 }
