@@ -13,8 +13,6 @@ public class Direccion {
     private String localidad;
     private String ciudad;
     private String pais;
-    @OneToOne
-    private Tienda tienda;
     @Column(length = 5)
     private Integer cp;
 
@@ -28,6 +26,7 @@ public class Direccion {
         this.ciudad = ciudad;
         this.pais = pais;
         this.cp = cp;
+
     }
 
     public Long getId() {

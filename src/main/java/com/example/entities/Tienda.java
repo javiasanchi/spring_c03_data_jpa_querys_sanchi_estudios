@@ -2,6 +2,8 @@ package com.example.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tienda")
 public class Tienda {
@@ -19,6 +21,7 @@ public class Tienda {
     @OneToOne
     private Direccion direccion;
 
+
     public Tienda() {
     }
 
@@ -29,6 +32,7 @@ public class Tienda {
         this.email = email;
         this.factura = factura;
         this.abierta = abierta;
+        this.direccion = direccion;
     }
 
     public Long getId() {
@@ -91,6 +95,15 @@ public class Tienda {
 
     public Tienda setAbierta(Boolean abierta) {
         this.abierta = abierta;
+        return this;
+    }
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public Tienda setDireccion(Direccion direccion) {
+        this.direccion = direccion;
         return this;
     }
 
