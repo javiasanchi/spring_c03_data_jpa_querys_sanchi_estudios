@@ -29,13 +29,26 @@ public class App {
 		findAllByTelefono();
 		findAllByEmail();
 		filtroPorCalleYPais();
+		// filtroPrecioMax();
 
 	}
+	/*private static void filtroPrecioMax(){
+		ProductosRepository productosRepo = context.getBean((ProductosRepository.class));
 
+		System.out.println("==================== FIND ALL BY PRECIO MÁXIMO ====================");
+		List<Productos> productos = productosRepo.findAllByPrecio(12.70);
+
+		for (Productos product: productos) {
+
+			System.out.println(product);
+
+		}
+	}*/
 	private static void filtroPorCalleYPais() {
 		DireccionRepository direccionRepo = context.getBean(DireccionRepository.class);
 		System.out.println("==================== FIND ALL BY CALLE Y PAIS ====================");
 		List<Direccion> direccionFiltro = direccionRepo.findAllByCalleAndPais("calle2", "pais3");
+
 		for (Direccion direccion: direccionFiltro) {
 			System.out.println(direccion);
 		}
